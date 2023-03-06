@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Interactive Bingo Card</title>
+	<style>
+		.bingo-card {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			grid-template-rows: repeat(4, 1fr);
+			grid-gap: 10px;
+			//margin: 0 auto;
+			padding: 20px;
+			max-width: 600px;
+		}
+
+		.bingo-item {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background-color: #eee;
+			font-size: 24px;
+			font-weight: bold;
+			border-radius: 5px;
+			cursor: pointer;
+			transition: all 0.3s ease;
+		}
+
+		.bingo-item:hover {
+			background-color: #ccc;
+		}
+
+		.bingo-item.selected {
+			background-color: #007bff;
+			color: #fff;
+		}
+
+		.bingo-item.disabled {
+			background-color: #aaa;
+			cursor: not-allowed;
+		}
+	</style>
+</head>
+<body>
+	<div class="bingo-card">
+		<div class="bingo-item"><img src="VenatorShards.png"></div>
+		<div class="bingo-item"><img src="WildyBosses.png"></div>
+		<div class="bingo-item"><img src="Bandos.png"></div>
+		<div class="bingo-item"><img src="Barrows.png"></div>
+		<div class="bingo-item"><img src="Nex.png"></div>
+		<div class="bingo-item"><img src="CrystalToolSeed.png"></div>
+		<div class="bingo-item"><img src="ToB.png"></div>
+		<div class="bingo-item"><img src="MedBoots.png"></div>
+		<div class="bingo-item"><img src="ToA.png"></div>
+		<div class="bingo-item"><img src="Tempoross.png"></div>
+		<div class="bingo-item"><img src="Cudgel.png"></div>
+		<div class="bingo-item"><img src="BrokenPick.png"></div>
+		<div class="bingo-item"><img src="Pets.png"></div>
+		<div class="bingo-item"><img src="CoX.png"></div>
+		<div class="bingo-item"><img src="Bobs.png"></div>
+		<div class="bingo-item"><img src="Zulrah.png"></div>
+	</div>
+	<script>
+		let bingoItems = document.querySelectorAll('.bingo-item');
+		bingoItems.forEach(item => {
+			item.addEventListener('click', () => {
+				if (item.classList.contains('disabled')) return;
+				item.classList.toggle('selected');
+			});
+		});
+	</script>
+</body>
+</html>
